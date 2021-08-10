@@ -1,0 +1,22 @@
+#jwt:
+#  secret: '[a-zA-Z0-9._]^+$Guidelines89797987forAlphabeticalArraNumeralsandOtherSymbo$'
+
+spring:
+  output:
+    ansi:
+      enabled=always
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_security
+    password: password
+    username: root
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+#  mvc:
+#    throw-exception-if-no-handler-found: true
+#  resources:
+#    add-mappings: false
