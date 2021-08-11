@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
       log.error(NO_USER_FOUND_BY_USERNAME + username);
       throw new UsernameNotFoundException(NO_USER_FOUND_BY_USERNAME + username);
     } else {
-      user.setLastLoginDateDisplayed(user.getLastLoginDate());
+      user.setLastLoginDateDisplay(user.getLastLoginDate());
       user.setLastLoginDate(new Date());
       userRepository.save(user);
       UserPrincipal userPrincipal = new UserPrincipal(user);
