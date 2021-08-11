@@ -1,8 +1,12 @@
-package com.Sang.exception.domain;
+package com.Sang.exception;
 
 import static org.springframework.http.HttpStatus.*;
 
 import com.Sang.domain.HttpResponse;
+import com.Sang.exception.domain.EmailExistException;
+import com.Sang.exception.domain.EmailNotFoundException;
+import com.Sang.exception.domain.UserNotFoundException;
+import com.Sang.exception.domain.UsernameExistException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import java.io.IOException;
 import java.util.Objects;
@@ -115,7 +119,7 @@ public class ExceptionHandling implements ErrorController {
         httpStatus.value(),
         httpStatus,
         httpStatus.getReasonPhrase().toUpperCase()
-        ,message.toUpperCase());
+        ,message);
     return new ResponseEntity<>(httpResponse, httpStatus);
   }
 
