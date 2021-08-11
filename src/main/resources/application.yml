@@ -3,11 +3,13 @@ jwt:
 
 server:
   port: 8080
+  error:
+    path: "/error"
 
 spring:
   output:
     ansi:
-      enabled=always
+      enabled: ALWAYS
   datasource:
     url: jdbc:mysql://localhost:3306/spring_security
     password: password
@@ -19,7 +21,3 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
-#  mvc:
-#    throw-exception-if-no-handler-found: true
-#  resources:
-#    add-mappings: false
