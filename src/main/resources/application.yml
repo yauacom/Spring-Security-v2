@@ -7,17 +7,24 @@ server:
     path: "/error"
 
 spring:
-  output:
-    ansi:
-      enabled: ALWAYS
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    port: 587
+    username: yauacom117@gmail.com
+    password: dppsramdbgrgjllm
+    protocol: smtp
+    properties.mail.smtp:
+      auth: true
+      starttls:
+        enable: true
+        required: true
+  output.ansi.enabled: ALWAYS
   datasource:
     url: jdbc:mysql://localhost:3306/spring_security
     password: password
     username: root
   jpa:
     show-sql: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate.ddl-auto: update
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
