@@ -11,6 +11,7 @@ import com.Sang.exception.domain.EmailExistException;
 import com.Sang.exception.domain.UserNotFoundException;
 import com.Sang.exception.domain.UsernameExistException;
 import com.Sang.repository.UserRepository;
+import com.Sang.service.EmailService;
 import com.Sang.service.LoginAttemptService;
 import com.Sang.service.UserService;
 import java.util.Date;
@@ -36,6 +37,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
   private UserRepository userRepository;
   private BCryptPasswordEncoder bCryptPasswordEncoder;
   private LoginAttemptService loginAttemptService;
+  private EmailService emailService;
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -87,6 +89,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     user.setProfileImageUrl(getTemporaryProfileImageUrl());
     userRepository.save(user);
     log.info("New user is created with password: {}", password);
+    emailService.sendNewPasswordEmail(firstName, password, email);
     return user;
   }
 
