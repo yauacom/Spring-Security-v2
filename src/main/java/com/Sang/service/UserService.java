@@ -26,8 +26,8 @@ public interface UserService {
       String username,
       String email,
       String role,
-      boolean isNonLocked,
       boolean isActive,
+      boolean isNonLocked,
       MultipartFile profileImage
   ) throws UserNotFoundException, EmailExistException, UsernameExistException, IOException;
 
@@ -38,8 +38,8 @@ public interface UserService {
       String newUsername,
       String newEmail,
       String role,
-      boolean isNonLocked,
       boolean isActive,
+      boolean isNonLocked,
       MultipartFile profileImage
   ) throws UserNotFoundException, EmailExistException, UsernameExistException, IOException;
 

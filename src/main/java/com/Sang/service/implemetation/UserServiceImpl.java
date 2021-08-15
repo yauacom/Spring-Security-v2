@@ -97,8 +97,14 @@ public class UserServiceImpl implements UserService, UserDetailsService {
   }
 
   @Override
-  public User addNewUser(String firstName, String lastName, String username, String email,
-      String role, boolean isNonLocked, boolean isActive, MultipartFile profileImage)
+  public User addNewUser(String firstName,
+      String lastName,
+      String username,
+      String email,
+      String role,
+      boolean isActive,
+      boolean isNonLocked,
+      MultipartFile profileImage)
       throws UserNotFoundException, EmailExistException, UsernameExistException, IOException {
     validateNewUsernameAndEmail(EMPTY, username, email);
     User user = new User();
@@ -121,8 +127,14 @@ public class UserServiceImpl implements UserService, UserDetailsService {
   }
 
   @Override
-  public User updateUser(String currentUsername, String newFirstName, String newLastName,
-      String newUsername, String newEmail, String role, boolean isNonLocked, boolean isActive,
+  public User updateUser(String currentUsername,
+      String newFirstName,
+      String newLastName,
+      String newUsername,
+      String newEmail,
+      String role,
+      boolean isActive,
+      boolean isNonLocked,
       MultipartFile profileImage)
       throws UserNotFoundException, EmailExistException, UsernameExistException, IOException {
     User currentUser = validateNewUsernameAndEmail(currentUsername, newUsername, newEmail);
